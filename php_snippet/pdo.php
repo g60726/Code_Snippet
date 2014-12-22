@@ -119,4 +119,29 @@ catch(PDOException $e){
 	echo "Select failed";
 }
 
+
+//5. using transaction
+try{
+	$insert = $db->prepare("INSERT INTO users (userid,age,name) VALUES (:userid, :age, :name)");
+	$insert->bindParam(":userid",$userid);
+	$insert->bindParam(":age",$age);
+	$insert->bindParam(":name",$name);
+
+	//This start the transaction, turn auto commit off
+	$db->beginTransaction();
+
+	$userid = 7;
+	$age = 13;
+	$name = "lomis";
+	$insert->execute();
+
+	$db->commit();
+
+	echo "The transaction had completed";
+
+}
+catch(PDOException $e){
+	echo $e->getMessage();
+	echo "<br>";
+}
 ?>
