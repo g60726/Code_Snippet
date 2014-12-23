@@ -13,6 +13,10 @@
                 $("#ajax_content").html(data);
             }
             
+            function sumUp(data){
+                
+            };
+            
             $("#display").click(function(event){
                 $("#content").load("./hello.html");
             });
@@ -28,10 +32,31 @@
             $("#ajax_get").click(function(event){
                 $.get("./ajax.php",{"number":"2"},handleProcess);
             });
+            
+            $("#ajax_json").click(function(event){
+                console.log("button is clicked");
+                //writing it using the $.ajax 
+                $.ajax({
+                    url: "./ajax_json.php",
+                    type: "POST",
+                    data: {'x':'2', 'y':'4'},
+                    success: function(data,status){
+                        var jsonObj = $.parseJSON(data);
+                        $("#ajax_content").html(jsonObj.sum);
+                        
+                        console.log("Got into the success function");
+                    },
+                    error: function(xhr, desc, err){
+                        console.log(xhr);
+                        console.log("Details: " + desc + "\nError:" + err);
+                    }
+                });
+            });
+            
         });
     </script>
 </head>
-<body>
+<body>            
     <h1>Using Ajax to Return value when a button is clicked</h1>
     <p>This is implemented using jQuery</p>
     <button type="button" id="display">Click Me</button> &nbsp;
@@ -44,7 +69,10 @@
     
     <!--Using Ajax to send a get request-->
     
-    <button type="button" id="ajax_get">Send Post Request(without json)</button>
+    <button type="button" id="ajax_get">Send Get Request(without json)</button>
+    <br>
+    <button type="button" id="ajax_json">Send POST Request(with Json)</button>
+    <br>
     <div id="ajax_content"></div>
 </body>
 </html>
