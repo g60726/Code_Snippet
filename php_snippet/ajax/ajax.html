@@ -53,12 +53,35 @@
                 });
             });
             
+            $("#submit_num").click(function(event){
+                //get user input
+                var num1 = $("#number1").val();
+                var num2 = $("#number2").val();
+                
+                //making ajax call
+                $.ajax({
+                    url: "./ajax_json.php",
+                    type: "POST",
+                    data: {"x":num1, "y":num2},
+                    success: function(data,status){
+                        var jsonObj = $.parseJSON(data);
+                        var sum = jsonObj.sum;
+                        $("#sum").html(sum);
+                    }, 
+                    error: function(xhr,desc,err){
+                        console.log(xhr);
+                        console.log("Details: " + desc + "\nError:" + err);
+                    }
+                });
+            });
         });
     </script>
 </head>
 <body>            
     <h1>Using Ajax to Return value when a button is clicked</h1>
     <p>This is implemented using jQuery</p>
+    
+    <!--This uses jquery method .load to load basic static html elements-->
     <button type="button" id="display">Click Me</button> &nbsp;
     <button type="button" id="displayClose">Close</button>
     <br>
@@ -74,5 +97,17 @@
     <button type="button" id="ajax_json">Send POST Request(with Json)</button>
     <br>
     <div id="ajax_content"></div>
+    
+    <!--Get user input and make a ajax call-->
+    <p>Adding numbers in reatime using AJAX + jquery</p>
+    <input type="text" name="number1" id="number1">
+    <br>
+    <input type="text" name="number2" id="number2">
+    <br>
+    <button type="button" id="submit_num">Add</button>
+    <p>The sum is:</p>
+    <div id="sum"></div>
+    
+    
 </body>
 </html>
