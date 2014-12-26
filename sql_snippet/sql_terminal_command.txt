@@ -1,0 +1,15 @@
+1.Create database
+   > CREATE DATABASE <dbname>;
+
+2. Create a table
+   > CREATE TABLE <table_name>(
+   > <col_name> <atr1> <atr2> ....., 
+   > ...
+   > );
+
+   Atr: 
+   varchar(<size>) : Data type
+   NOT NULL : It cant be NULL
+   PRIMARY KEY : Make that column a primary key
+   DEFAULT : Specify a default value for that column
+   AUTO_INCREMENT : automaticall generate and increment an Id 
