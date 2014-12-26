@@ -1,0 +1,123 @@
+
+<!DOCTYPE>
+<html>
+<head>
+	<title>Basic Syntax of javscript</title>
+	<script type="text/Javascript">
+		function pop_up(){
+			window.alert("Hello Ken!");
+			return;
+	    }
+
+	    function document_write(){
+	    	document.write("Hello Ken using document.write!");
+	    	return;
+	    }
+
+	    function inner_html(id){
+	    	document.getElementById(id).innerHTML="Hello Ken from innerHTML";
+	    	return;
+	    }
+
+	    function use_console(){
+	    	console.log("Hello Ken from Console!");
+	    }
+
+	</script>
+</head>
+<body>
+	<h4>Output from Javascript</h4>
+	<p id='demo'></p>
+	<button type="button" onclick="pop_up()">Using window.alert</button>
+	<button type="button" onclick="document_write()">Using document.write</button>
+	<button type="button" onclick="inner_html('demo')">Using innerHTML</button>
+	<button type="button" onclick="use_console()">Using console</button>
+
+	<h4>Data type and data initiation</h4>
+	<p>Please ctrl+shift+j to bring up the console.</p>
+	<script>
+		console.log("begin the variable type section!");
+		var integer = "2"; //int type
+        var arr = ['ken','liao',4] //array
+        var obj ={'firstname':'ken','lastname':'liao','age':5};
+        console.log("This is an ineger: " + integer);
+        console.log("This is an array: " + arr);
+        console.log("This is an object: " + obj);
+	</script>
+
+	<h4>JavaScript Function</h4>
+	<p>Using ctrl+shift+j to bring up the console</p>
+	<script type="text/javascript">
+		console.log("Begin the function section!");
+		function add(x,y){
+			return x+y;
+		}
+		console.log(add(2,3));
+	</script>
+
+	<h4>Using Object Definition</h4>
+	<script type="text/javascript">
+		//defining an object and its method
+		console.log("Start the object definition section.");
+		var car={ 'weight': 5,
+	              'colors' : 'white',
+	              'milage': 500,
+	              'get_info' : function(){
+	              return "the weight of the car is: " + this.weight + " and the color is: " + this.colors;
+	              }};
+	    console.log(car.get_info());
+	</script>
+</body>
+<h4>Javascript Event</h4>
+<button type="button" onclick="window.alert('Onclick event')">OnClick</button>
+<span onmouseover="window.alert('Onmouseover')" style="border:solid red;">Onmouseover</span>
+type_something: <input onkeydown="window.alert('onkeydown')"><br>
+
+<h4>Javascript Time</h4>
+Current time:
+<p id="time"></p>
+<p id="date"></p> <!--the standard format for date -->
+<p id="date2"></p> <!--toDateString to be really readable-->
+<script type="text/javascript">
+	var date = new Date();
+	var time = date.getTime();
+	document.getElementById('time').innerHTML = time;
+	document.getElementById('date').innerHTML = date;
+	document.getElementById('date2').innerHTML = date.toDateString();
+</script>
+
+<h4>JavaScript Array Method</h4>
+<div id="array_value"></div>
+<div id="array_join"></div>
+<div id="array_pop"></div>
+<div id="array_push"></div>
+<div id="array_shift"></div>
+<div id="array_change"></div>
+<div id="array_delete"></div>
+<div id="test_splice"></div>
+<div id="test_splice_add"></div>
+<script type="text/javascript">
+	var array_nlv = ['Stephen','Ken','NLV'];
+	document.getElementById("array_value").innerHTML=array_nlv.valueOf();
+	document.getElementById("array_join").innerHTML=array_nlv.join("and");
+	array_nlv.pop();
+	document.getElementById("array_pop").innerHTML=array_nlv;
+	array_nlv.push('bing');
+	document.getElementById("array_push").innerHTML=array_nlv;
+	array_nlv.shift();
+	document.getElementById('array_shift').innerHTML=array_nlv;
+	array_nlv[0] = "New_element";
+	document.getElementById("array_change").innerHTML=array_nlv;
+	delete array_nlv[0];  //delete will make that empty instead of just delelting it
+	document.getElementById("array_delete").innerHTML=array_nlv;
+
+	//Starting a new test
+	var test_arr = [1,2,3,4,5,6,7,8,9,10];
+	test_arr.splice(0,2);  // second arg specify the number of element to be removed
+	document.getElementById("test_splice").innerHTML = test_arr;
+	test_arr.splice(0,0,'ken','liao','name'); // when using splice the first arg is the index that your want to insert/delete
+	document.getElementById("test_splice_add").innerHTML = test_arr;
+</script>
+
+
+</html>

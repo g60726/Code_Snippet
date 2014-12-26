@@ -5,6 +5,7 @@
    > CREATE TABLE <table_name>(
    > <col_name> <atr1> <atr2> ....., 
    > ...
+   PRIMARY KEY (<col_name);
    > );
 
    Atr: 
