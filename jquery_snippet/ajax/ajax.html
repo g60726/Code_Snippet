@@ -1,0 +1,113 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>Using Ajax</title>
+    <!--This loads the jquery-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!--This $().load method essentially "copy over the statis elements into the selected tag-->
+    <script type="text/javascript">
+        $(document).ready(function(){
+            
+            //function that handles the data response back from ajax_get
+            function handleProcess(data){
+                $("#ajax_content").html(data);
+            }
+            
+            function sumUp(data){
+                
+            };
+            
+            $("#display").click(function(event){
+                $("#content").load("./hello.html");
+            });
+            
+            $("#display2").click(function(event){
+                $("#content2").load("./hello.html #content");
+            });
+            
+            $("#displayClose").click(function(event){
+                $("#content").css("display","none");
+            });
+            
+            $("#ajax_get").click(function(event){
+                $.get("./ajax.php",{"number":"2"},handleProcess);
+            });
+            
+            $("#ajax_json").click(function(event){
+                console.log("button is clicked");
+                //writing it using the $.ajax 
+                $.ajax({
+                    url: "./ajax_json.php",
+                    type: "POST",
+                    data: {'x':'2', 'y':'4'},
+                    success: function(data,status){
+                        var jsonObj = $.parseJSON(data);
+                        $("#ajax_content").html(jsonObj.sum);
+                        
+                        console.log("Got into the success function");
+                    },
+                    error: function(xhr, desc, err){
+                        console.log(xhr);
+                        console.log("Details: " + desc + "\nError:" + err);
+                    }
+                });
+            });
+            
+            $("#submit_num").click(function(event){
+                //get user input
+                var num1 = $("#number1").val();
+                var num2 = $("#number2").val();
+                
+                //making ajax call
+                $.ajax({
+                    url: "./ajax_json.php",
+                    type: "POST",
+                    data: {"x":num1, "y":num2},
+                    success: function(data,status){
+                        var jsonObj = $.parseJSON(data);
+                        var sum = jsonObj.sum;
+                        $("#sum").html(sum);
+                    }, 
+                    error: function(xhr,desc,err){
+                        console.log(xhr);
+                        console.log("Details: " + desc + "\nError:" + err);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>            
+    <h1>Using Ajax to Return value when a button is clicked</h1>
+    <p>This is implemented using jQuery</p>
+    
+    <!--This uses jquery method .load to load basic static html elements-->
+    <button type="button" id="display">Click Me</button> &nbsp;
+    <button type="button" id="displayClose">Close</button>
+    <br>
+    <button type="button" id="display2">Click Me 2</button> &nbsp;
+    <button type="button" id="displayClose2">Close</button>
+    <div id="content"></div>
+    <div id="content2"></div>
+    
+    <!--Using Ajax to send a get request-->
+    
+    <button type="button" id="ajax_get">Send Get Request(without json)</button>
+    <br>
+    <button type="button" id="ajax_json">Send POST Request(with Json)</button>
+    <br>
+    <div id="ajax_content"></div>
+    
+    <!--Get user input and make a ajax call-->
+    <p>Adding numbers in reatime using AJAX + jquery</p>
+    <input type="text" name="number1" id="number1">
+    <br>
+    <input type="text" name="number2" id="number2">
+    <br>
+    <button type="button" id="submit_num">Add</button>
+    <p>The sum is:</p>
+    <div id="sum"></div>
+    
+    
+</body>
+</html>
