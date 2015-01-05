@@ -104,14 +104,17 @@ try{
 	echo "<br>The select command run correct<br>.";
 	
 	//using prepare statement
-	$pre = $db->prepare("SELECT * FROM users WHERE userid = :userid");
+	$pre = $db->prepare("SELECT count(*) FROM users WHERE userid = :userid");
     $userid = 1;
 	$pre->execute(array('userid'=>"$userid"));
 	while($row = $pre->fetch()){
 		echo $row['name'];
 		echo "<br>";
 	}
+	//get the number of records fetched
+	$numRecord = $pre->fetchColumn();
 	echo "Select using prepare statement";
+
 }
 
 catch(PDOException $e){
