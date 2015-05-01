@@ -1,4 +1,5 @@
 #The types of variables
+
 print "Hello\n"; #Double quotes string literal
 print 'Hello\n'; #Single quote string literal, in this case the \n doesn't change to newline character 
 print "\n";
@@ -31,4 +32,7 @@ print "\n";
 #  ge = greater than or equal to
 
 print 'ken' eq 'ken'; #will print 1 which is true 
+
+#say, just like print, but implicilty append a newline character
+say "Hello World";
 

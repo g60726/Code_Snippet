@@ -17,4 +17,17 @@ else{
 	print "the variable is not defined\n";
 }
 
+#foreach 
+@words = qw(ken liao is awesome);
+foreach $word (@words){
+	print $word . "\n";
+}
+
+#Using Perl default variable $_ , when no variable name is used, Perl automatically assign it to $_
+foreach (1..100){
+	print "Using default variable to count $_\n";
+}
+
+$_ = "WOW";
+print;
 
