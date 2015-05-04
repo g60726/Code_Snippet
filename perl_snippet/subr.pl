@@ -71,7 +71,7 @@ print &sum_of_array(@arr1)."\n";
 
 #if you use strict, if you declare global variable within a function, you will encounter a compilation error
 # if you want to persist and local declare as state 
-use 5.010;
+use 5.010;  #this feature is only avialable at this version 
 sub use_state{
 	state $n = 0;
 	$n += 1;
