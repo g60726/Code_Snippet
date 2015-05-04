@@ -36,9 +36,4 @@ sub multiply{
 	$_[0] * $_[1];  #first argument multiply to the second argument 
 }
 
-<<<<<<< HEAD
-print &multiply(2,6) . "\n";
 
-=======
-print &multiply(2,6) . "\n";
->>>>>>> add_perl
