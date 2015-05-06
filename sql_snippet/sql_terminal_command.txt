@@ -14,3 +14,15 @@
    PRIMARY KEY : Make that column a primary key
    DEFAULT : Specify a default value for that column
    AUTO_INCREMENT : automaticall generate and increment an Id 
+
+
+3. Check Constraints imposed on column 
+   SHOW CREATE TABLE `<yourtable>`;
+
+
+4. Add a Foreign Key to an existing table  
+   ALTER TABLE <table> 
+   ADD FOREIGN KEY (<FK column name>)
+   REFERENCES <the other table>(<PK column name>); 
+
+     
