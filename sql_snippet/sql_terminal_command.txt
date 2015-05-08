@@ -35,3 +35,12 @@
 
 7. Drop a trigger
    DROP TRIGGER <trigger>;
+
+8. Creating a trigger:
+   delimiter $$
+   CREATE TRIGGER <trigger name>
+   <trigger time> <action> ON <table name>
+   BEGIN
+     ......
+   END $$ 
+   delimiter ;  
