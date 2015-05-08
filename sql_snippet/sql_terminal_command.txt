@@ -25,4 +25,6 @@
    ADD FOREIGN KEY (<FK column name>)
    REFERENCES <the other table>(<PK column name>); 
 
-     
+
+5. Show indexes from a table
+   SHOW INDEX FROM <table>;  
