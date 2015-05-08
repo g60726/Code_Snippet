@@ -28,3 +28,10 @@
 
 5. Show indexes from a table
    SHOW INDEX FROM <table>;  
+
+
+6. Show triggers in that database
+   SHOW TRIGGERS;
+
+7. Drop a trigger
+   DROP TRIGGER <trigger>;
