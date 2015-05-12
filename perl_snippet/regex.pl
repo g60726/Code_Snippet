@@ -1,4 +1,4 @@
-#This is a tutorial about Regular Expression 
+
 use strict; 
 #Simple match, to see if a substring is in a string, simply type /<sub_string>/
 my $str = "kenliaoisawesome";
@@ -59,8 +59,7 @@ else {
   print "It doesn't match\n";
 }
 
-# back reference \1 \2 \3 ... the number is the ith capture group
-
+# back reference \1 \2 \3 ... the number is the ith capture group, count the open bracket and ignore nesting
 $_ = "So dad and daisy";
 if(/(da).*\1/){
   #This will match the above because it means, group da, any character in between, however, another 'da' must occur 
@@ -69,3 +68,24 @@ if(/(da).*\1/){
 else{
   print "it doesn't match\n";
 }
+
+#However, since Perl 5.10, the back reference is \i -> \g{i
+
+#Using alternative | , that means if the left fails, will see if the right matches 
+
+$_ = "ken liao";
+
+if(/ken( |\t)liao/){
+   print "it matches\n";
+}
+else{
+   print "it doesnt matches\n";
+}
+
+# Character Class, a list of possible characters in [ ], can use - to specify range, 52 chars to choose from, 0-9 
+# /[a-z]/ will match a, will not match ab nor A
+
+# the caret ^ is negation
+# /[^def]/ matches every single character except any one of there 3 characters 
+
+
