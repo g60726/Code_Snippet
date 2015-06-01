@@ -13,3 +13,9 @@ git branch -a
 5. merge branches
 git checkout <branch_you_want_to_merge_to>
 git merge <branch_you_want_to_from> 
+
+6. resolve merge conflict
+
+git mergetool 
+
+#This will bring up opendiff on mac. Then resolve it from there. 
