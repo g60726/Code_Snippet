@@ -43,4 +43,11 @@
    BEGIN
      ......
    END $$ 
-   delimiter ;  
+   delimiter ;
+
+9. Export a table to .sql
+   mysqldump -u <user> -p <dbname> <table> > <filename>.sql 
+
+10. Import a .sql file
+   mysql -u <user> -p < <filename>.sql
+    
