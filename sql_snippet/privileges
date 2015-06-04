@@ -1,0 +1,15 @@
+3. Give user all privilege  
+   GRANT ALL PRIVILEGES ON *.* TO "<user>"@"localhost";
+
+2. Show privileges of the current user
+   SHOW GRANTS;
+       or 
+   SHOW GRANTS FOR "user"@"localhost"
+
+
+3. Grant Specific privileges to user
+   GRANT <PRIVILEGE> ON *.* TO "user"@"localhost";
+
+
+4. Revoke Privileges 
+   REVOKE <PRIVILEGES> ON *.* FROM "user"@"localhost";

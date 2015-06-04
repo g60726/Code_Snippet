@@ -50,4 +50,13 @@
 
 10. Import a .sql file
    mysql -u <user> -p < <filename>.sql
-    
+   
+11. Create a user in MYSQL
+   CREATE USER "<username>"@"localhost" IDENTIFIED BY "<pwd>";
+
+12. Give user all privilege 
+   GRANT ALL PRIVILEGES ON *.* TO "<user>"@"localhost";
+
+
+13. Show SELECT result in a vertical manner
+   ......... \G ;  

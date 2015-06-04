@@ -147,4 +147,6 @@ catch(PDOException $e){
 	echo $e->getMessage();
 	echo "<br>";
 }
+//6. Close the connection, by using unset, nulldify the connection 
+unset($db);
 ?>
