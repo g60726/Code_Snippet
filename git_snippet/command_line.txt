@@ -19,3 +19,7 @@ git merge <branch_you_want_to_from>
 git mergetool 
 
 #This will bring up opendiff on mac. Then resolve it from there. 
+
+7. set username and email, make sure the username matches the one on github page
+git config --global user.name=""
+git config --global user.email=""

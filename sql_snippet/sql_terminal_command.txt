@@ -60,3 +60,7 @@
 
 13. Show SELECT result in a vertical manner
    ......... \G ;  
+
+14, Kill all process
+select concat('KILL ',id,';') from information_schema.processlist where user='root' into outfile '/tmp/a.txt';
+source /tmp/a.txt;
