@@ -33,10 +33,6 @@ int main(){
 	else 
 		cout << "X is equal to Y" << endl; 
 
-  	/*
-	*Looping
-	*/
-
 	//for loop
 	const int max = 55; 
  	for(int i = 0 ; i < max ; i ++)

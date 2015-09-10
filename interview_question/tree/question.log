@@ -1,0 +1,11 @@
+You are given a pointer to the root of a binary tree. Print the top view of the binary tree. (The outer layer of the tree). 
+
+Implement pre-order traversal.
+
+Implement in-order traversal.
+
+Implement post-order traversal.
+
+Implement level-order traversal.
+
+You are given a pointer to the root of a binary search tree and a value to be inserted into the tree. Insert this value into its appropriate position in the binary search tree and return the root of the updated binary tree. You just have to complete the function.

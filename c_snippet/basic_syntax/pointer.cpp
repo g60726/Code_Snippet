@@ -19,7 +19,10 @@ int main(){
 	delete p_number; //only free up the memory allocated from new
 
   /*
+	*================================================================
 	* Struct 
+	*
+	*================================================================
 	*/
 	//struct definition
 	struct Node
