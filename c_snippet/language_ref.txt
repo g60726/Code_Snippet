@@ -1,0 +1,5 @@
+http://www.tutorialspoint.com/cplusplus/cpp_templates.htm
+Tutorialspoint - beginner friendly
+
+http://www.cplusplus.com/
+Offical Reference
