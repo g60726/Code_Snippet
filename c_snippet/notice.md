@@ -4,3 +4,10 @@ create an error. So using std::cout to qualify the core library is necessary in 
 2. Only pointer can be assigned to NULL; 
 
 3. No this in C++
+
+4. node* h = new node;
+   node* n = h;
+	 delete n will not destroy h
+
+5. dont assume when you instantize an object or struct, everything inside is instantize to NULL.
+   YOU NEED to do it yourself.
