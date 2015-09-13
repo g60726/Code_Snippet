@@ -3,3 +3,12 @@ Tutorialspoint - beginner friendly
 
 http://www.cplusplus.com/
 Offical Reference
+
+http://www.algolist.net/Data_structures/Stack/Array-based_implementation
+Implementation Example of different data structure and algorithm in C++ and Java
+
+http://www.codeguru.com/cpp/cpp/cpp_mfc/stl/article.php/c4027/C-Tutorial-A-Beginners-Guide-to-stdvector-Part-1.htm
+Implementation of Vector
+
+http://www.dreamincode.net/forums/topic/33631-c-vector-tutorial/
+Beginner Friendly Implementation of Vector

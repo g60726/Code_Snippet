@@ -1,4 +1,6 @@
 //class definition
+#include <string>
+using namespace std;
 class Car 
 {
   public:
