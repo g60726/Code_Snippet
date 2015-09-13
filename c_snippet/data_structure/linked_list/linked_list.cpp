@@ -68,24 +68,23 @@ void pop(node* head)
 */
 
 int main(){
-	//making a pointer to the first element of linked list
-	node* head; 
-	//making a pointer that travers the linked list
-  node* conductor; 
 	
 	//making a new node
-	head = new node;
+	node* head = new node;
 	head->value = 1;
 	head->next = NULL;
 
   node* n1 = new node;
 	n1->value = 2;
+	n1->next = NULL;
+  
+	node* n2 = new node;
+	n2->value = 3;
+	n2->next = NULL;
 
 	insert(head,n1);
+	insert(head,n2);
+
 	print_linkedlist(head);
 
-  node* n0 = new node;
-	n0->value = 0;
-	append(&head,n0);
-	print_linkedlist(head);
 }

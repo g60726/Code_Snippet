@@ -34,8 +34,11 @@ int main(){
   //init
 	node* head = new node;
 	head->value = 1;
+	head->next = NULL;
   node* n1 = new node;
 	n1->value = 2;
+	n1->next = NULL;
+
 	insert(&head, n1);
   print_linkedlist(head);
 }
