@@ -28,5 +28,8 @@ print foo.endswith("!")
 #split 
 print foo.split("l") #['He', '', 'o Wor', 'd!']
 
+#string length
+print len(foo)
+
 #method reference : http://www.tutorialspoint.com/python/python_strings.htm
 
