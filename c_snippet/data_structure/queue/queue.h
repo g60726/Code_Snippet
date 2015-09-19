@@ -37,7 +37,6 @@ void Queue::enqueue(Node* new_node)
 		while(traverse->next != NULL)
 			traverse = traverse->next;
 		traverse->next = new_node;
-		delete traverse;
 	}
 	return;
 }
@@ -64,7 +63,6 @@ void Queue::printQueue()
 		cout << traverse->value << endl;
 		traverse = traverse->next;
 	}
-	delete traverse;
 	return;
 }
 

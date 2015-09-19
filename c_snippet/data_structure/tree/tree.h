@@ -45,7 +45,6 @@ void Queue::enqueue(Node* new_node)
     while(traverse->next != NULL)
       traverse = traverse->next;
     traverse->next = new_node;
-    delete traverse;
   }
   return;
 }
@@ -72,7 +71,6 @@ void Queue::printQueue()
     cout << traverse->value << endl;
     traverse = traverse->next;
   }
-  delete traverse;
   return;
 }
 
@@ -91,6 +89,7 @@ class Tree
   public:
 		Tree();
 		~Tree();
+		Node* wrapper(tNode* root);
 		void preOrder(tNode* root);
 		void inOrder(tNode* root);
 		void postOrder(tNode* root);
@@ -152,6 +151,14 @@ void Tree::makeSample()
 	root = r;
 }
 
+Node* Tree::wrapper(tNode* root)
+{
+	Node* result = new Node;
+	result->value = root;
+	result->next = NULL;
+	return result;
+}
+
 void Tree::visit(tNode* t_node)
 {
 	cout << t_node->value << endl;
@@ -186,10 +193,30 @@ void Tree::inOrder(tNode* root)
 
 void Tree::levelOrder(tNode* root)
 {
+  if(root == NULL)
+		return;
 
+	Node* n_root = wrapper(root);
+	queue->enqueue(n_root);
+	while(!queue->isEmpty())
+	{
+		tNode* temp = queue->dequeue()->value;
+		if(temp->left != NULL)
+		{
+			Node* n_left = wrapper(temp->left);
+			queue->enqueue(n_left);
+		}
+		if(temp->right != NULL)
+		{
+			Node* n_right = wrapper(temp->right);
+			queue->enqueue(n_right);
+		}
+		visit(temp);	
+	}
+	return;
 }
 
 void Tree::test()
 {
-	inOrder(root);
+	levelOrder(root);
 }
