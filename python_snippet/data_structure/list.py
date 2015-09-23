@@ -31,3 +31,4 @@ foo1.pop()
 print foo1
 
 #reference http://www.tutorialspoint.com/python/python_lists.htm
+#reference https://www.hackerrank.com/challenges/python-lists
