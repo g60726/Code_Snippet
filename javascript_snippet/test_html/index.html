@@ -1,0 +1,14 @@
+<script>
+//Use of that
+var x = 3;
+function cons(x,y){
+	this.x = x;
+	this.y = y;
+	this.kk = function(){
+		console.log("Hi" + this.x);
+	}
+};
+
+dummy = cons(1,1);
+dummy.kk();
+</script>
